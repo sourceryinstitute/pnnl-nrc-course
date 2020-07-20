@@ -1,6 +1,6 @@
 program hello
   use iso_fortran_env, only : output_unit
-  use assertion_utility, only : assert
+  use assertion_interface, only : assert
   implicit none
   integer, parameter :: max_greeting_len = 1024
   character(len=max_greeting_len) greeting[*]
