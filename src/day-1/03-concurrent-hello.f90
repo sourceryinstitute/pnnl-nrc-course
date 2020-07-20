@@ -1,4 +1,5 @@
 program hello
+  use iso_fortran_env, only : output_unit
   implicit none
   integer, parameter :: max_greeting_len = 1024
   character(len=max_greeting_len) greeting[*]
@@ -24,6 +25,6 @@ program hello
     end block
 
     sync all
-    if (me==1) print *,"Test passed."
+    if (me==1) write(output_unit,'(a)') "Test passed."
   end associate
 end program hello
