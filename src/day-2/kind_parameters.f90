@@ -1,4 +1,5 @@
 module kind_parameters
+  !! Define useful kind parameter constants
   implicit none
   private
   public :: ikind
