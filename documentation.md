@@ -2,7 +2,7 @@ project: PNNL/NRC Fortran 2018 Course
 summary: Live coding examples.
 src_dir: src
 output_dir: doc
-exclude: 01-shortest-program.f90 
+exclude: 01-shortest-program.f90
 display: public
          protected
          private

@@ -34,10 +34,10 @@ program hello
     sync all
       !! image control statemt: orders segments of execution
       !! every image waits here until every image gets here
-     
-     
+
+
     test_greeting: &  !! continuation character joining two lines
-    block 
+    block
       !! define a local scope for declarations
       integer image
       character(len=max_greeting_len) expected_greeting
@@ -49,9 +49,9 @@ program hello
             !! do image = first_image, ni
             write(expected_greeting,*) "Hello from image ",image," of ",ni
             remote_image_greeting = greeting[image]
-              !! square brackets indiates communication: getting the 
+              !! square brackets indiates communication: getting the
               !! greeting from another image
-            call assert(remote_image_greeting == expected_greeting, "remote_image_greeting == expected_greeting")  
+            call assert(remote_image_greeting == expected_greeting, "remote_image_greeting == expected_greeting")
           end do
         end if
 
