@@ -16,6 +16,12 @@ program main
       integer i
       logical test_passed
 
+        ! Alternative:
+        !
+        ! integer, allocatable :: image_numbers(:)
+        ! image_number = [(i, i=1,num_images())]
+        ! associate( expected_sum => sum(image_numbers) )
+
         associate( expected_sum => sum( [(i, i=1,num_images())]) )
           ! construct an array of image numbers using an implied do
           ! loop and sum the array
