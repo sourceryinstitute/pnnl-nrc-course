@@ -57,7 +57,6 @@ program hello
 
     end block test_greeting
 
-    sync all
     if (me==reporting_image) write(unit=output_unit,fmt='(a)') "Test passed."
   end associate
 
