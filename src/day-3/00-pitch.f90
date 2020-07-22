@@ -8,9 +8,6 @@ program main
   fuel_rod%pitch_ = expected_pitch ! violates the abstraction
   fuel_rod%defined = .true.       ! violates the abstraction
 
-  ! call fuel_rod%define(pitch = expected_pitch)
-   
-
   call time_loop(fuel_rod)
 
   print *, "Test passed."
