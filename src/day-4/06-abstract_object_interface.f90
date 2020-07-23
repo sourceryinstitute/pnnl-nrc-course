@@ -18,14 +18,27 @@ module object_interface
   contains
     procedure :: user_defined    ! get defined component
     procedure :: mark_as_defined ! set defined component
-    procedure(write_interface), deferred :: write(formatted) => write_formatted
+    procedure(write_interface), deferred :: write_formatted
+    generic :: write(formatted) => write_formatted
   end type
+
+  ! For a on-abstract type, a similar functionality exists through non-type-bound
+  ! generic interfaces but the interface can't be inherited.
+  !
+  ! interface write_formatted
+  !   module procedure write_
+  ! end interface
 
   abstract interface
    
-    subroutine write_formatted(me, ...)
+    module subroutine write_interface(me, unit, edit_descriptor, v_list, iostat, iomsg)
       !! Specification for the interface that child types must support
-      class(me), intent(in) :: me
+      class(object), intent(in) :: me
+      integer, intent(in) :: unit
+      character(len=*), intent(in) :: edit_descriptor
+      integer, intent(in) :: v_list(:)
+      integer, intent(out) :: iostat
+      character(len=*), intent(inout) :: iomsg
     end subroutine
 
   end interface
