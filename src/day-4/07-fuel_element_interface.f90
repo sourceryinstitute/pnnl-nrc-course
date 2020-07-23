@@ -25,7 +25,7 @@ module fuel_element_interface
       real, intent(in) :: pitch
     end subroutine 
 
-    pure module function pitch(me) result(my_pitch)
+    elemental module function pitch(me) result(my_pitch)
       !! Get the pitch value
       class(fuel_element), intent(in) :: me
       real my_pitch
