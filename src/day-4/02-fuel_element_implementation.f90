@@ -8,7 +8,12 @@ contains
       class(fuel_element), intent(out) :: me
       real, intent(in) :: pitch
       me%pitch_ = pitch
+
       call me%mark_as_defined
+
+      ! Alternative:
+      ! call me%object%mark_as_defined
+      
     end subroutine 
 
     pure module function pitch(me) result(my_pitch)
