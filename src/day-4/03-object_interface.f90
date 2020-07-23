@@ -10,7 +10,7 @@ module object_interface
     !! Encapsulate components and type-bound procedures that are
     !! broadly (universally) useful across the entire project
     private
-    logical :: defined=.false.
+    logical :: defined=.false. !! default initialization
   contains
     procedure :: user_defined    ! get defined component
     procedure :: mark_as_defined ! set defined component
@@ -22,7 +22,9 @@ module object_interface
       !! Report whether me has been defined
 
       class(object), intent(in) :: me
-        !! passed-object dummy argument
+        !! Dynamic polymorphism: "class" facilitates passing in an argument
+        !! of type "object" or any type that extends the object type or 
+        !! extends a type that extends the object type, ...
       logical me_defined
 
     end function
