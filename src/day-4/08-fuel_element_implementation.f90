@@ -18,6 +18,17 @@ contains
     module procedure write_formatted
       call assert(me%user_defined(), "fuel_element%write_formatted: me%user_defined()" )
       print *,"pitch = ", me%pitch_
+
+      ! No arguments are optional so the compiler passes default values
+      ! if the user does nothing to make the arguments otherwise.  They might
+      ! have zero values if scalor, zero-sizei if arrays, or zero length if
+      ! character values
+      !      
+      ! print *,"unit = ",unit
+      ! print *,"edit_descriptor = ",edit_descriptor
+      ! print *,"v_list = ",v_list
+      ! print *,"iostat = ",iostat
+      ! print *,"iomsg= ",iomsg
     end procedure 
 
 end submodule fuel_element_implementation
