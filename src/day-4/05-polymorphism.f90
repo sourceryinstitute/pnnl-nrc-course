@@ -1,4 +1,5 @@
 program main
+  !! Demonstrate the use of runtime polymorphism
   use object_interface, only : object
   use fuel_element_interface, only : fuel_element
   implicit none
@@ -7,6 +8,9 @@ program main
   
   print *,foo%user_defined()
 
-  print *,bar%user_defined()
+  print *,bar%user_defined() ! Invoke parent procedure on child type
+
+  ! Alternative:
+  ! print *,bar%object%user_defined()
   
 end program main
