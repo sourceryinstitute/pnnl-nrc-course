@@ -6,6 +6,7 @@ Directories
 
 * [Day 1](./src/day-1)
 * [Day 2](./src/day-2)
+* [Day 3](./src/day-3)
 
 
 Useful Notes
