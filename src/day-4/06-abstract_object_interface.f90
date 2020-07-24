@@ -22,7 +22,7 @@ module object_interface
     generic :: write(formatted) => write_formatted
   end type
 
-  ! For a on-abstract type, a similar functionality exists through non-type-bound
+  ! For a non-abstract type, a similar functionality exists through non-type-bound
   ! generic interfaces but the interface can't be inherited.
   !
   ! interface write_formatted
