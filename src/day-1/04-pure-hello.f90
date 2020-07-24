@@ -1,4 +1,5 @@
 program hello
+  !! Incoporate a simple, pure assertion utility
   use iso_fortran_env, only : output_unit
   implicit none
   integer, parameter :: max_greeting_len = 1024

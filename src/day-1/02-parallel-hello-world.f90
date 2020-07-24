@@ -1,4 +1,7 @@
 program hello
+  !! Simple demonstration demonstration of parallel communication
+  !! via a coarray: each image creates a greating; image 1 gets
+  !! and prints all images' greetings.
   implicit none
   integer, parameter :: max_greeting_len = 1024
   character(len=max_greeting_len) greeting[*]

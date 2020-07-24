@@ -1,4 +1,6 @@
 program hello
+  !! Demonstrate the lack of type safety associated with 
+  !! external procedures (assert).
   use iso_fortran_env, only : output_unit
   implicit none
   integer, parameter :: max_greeting_len = 1024
