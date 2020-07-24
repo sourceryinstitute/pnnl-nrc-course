@@ -10,6 +10,8 @@ program main
 
   print *,bar%user_defined() ! Invoke parent procedure on child type
 
+  print *,"Test passed."
+
   ! Alternative:
   ! print *,bar%object%user_defined()
   
