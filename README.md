@@ -7,6 +7,7 @@ Directories
 * [Day 1](./src/day-1)
 * [Day 2](./src/day-2)
 * [Day 3](./src/day-3)
+* [Day 4](./src/day-4)
 
 
 Useful Notes
@@ -37,7 +38,6 @@ about and taking time to digest.  Several useful ones are described on
 Atlassian's [Comparing Workflows] resource.  With any of these workflows,
 my recommended "inner loop" that one is always using, even in the context of
 the others, is the [Gitflow workflow].
-
 
 [GCC]: https://gcc.gnu.org
 [OpenCoarrays]: https://github.com/sourceryinstitute/opencoarrays
