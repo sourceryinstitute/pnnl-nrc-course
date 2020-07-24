@@ -53,24 +53,14 @@ contains
  
   module procedure within_tolerance
 
+    class(oracle), allocatable :: error 
+
     call assert(all([me%user_defined(), reference%user_defined()]), &
                "(all([me%user_defined(), reference%user_defined()]) in oracle%within_tolerance")
 
-    associate(error => me - reference)    
-      is_in_tolerance = (error%norm() <= tolerance)
-    end associate
+    error = me - reference
+    is_in_tolerance = (error%norm() <= tolerance)
 
   end procedure
 
-  ! Alternative:
-  ! module procedure within_tolerance
-  !   class(oracle), allocatable :: error 
-
-  !   error = me - reference ! Fortran 2008
-  !   allocate(error, source = me - reference) ! Fortran 2003
-  !   
-  !   is_in_tolerance = (error%norm() <= tolerance)
- 
-  ! end procedure
-
-end module oracle_implementation
+end submodule oracle_implementation
