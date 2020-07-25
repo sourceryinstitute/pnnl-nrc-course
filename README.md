@@ -1,6 +1,26 @@
 Fortran 2018: Basic Programming and Advanced Paradigms
 ======================================================
 
+Prerequisites
+-------------
+1. GCC 10.1.0
+2. OpenCoarrays 2.9.1
+3. FORD
+4. CMake
+
+Downloading, Building, and Testing
+----------------------------------
+```bash
+export FC=caf         # Forces `cmake` to use the OpenCoarrays `caf` compiler wrapper
+git clone git@github.com:sourceryinstitute/pnnl-nrc-course
+mkdir -p pnnl-nrc-course/build
+cd build
+cmake ..
+make
+ctest
+```
+All tests should pass.
+
 Directories
 -----------
 
