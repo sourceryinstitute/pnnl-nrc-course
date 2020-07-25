@@ -11,7 +11,7 @@ contains
     end procedure
 
     module procedure subtract
-      type(fuel_element), allocatable :: local_difference
+      type(fuel_element) :: local_difference
         ! prevent a nested second level of type guarding
 
       call assert(all([me%user_defined(), rhs%user_defined()]), &
@@ -20,14 +20,13 @@ contains
 
       select type(rhs)
         type is(fuel_element)
-          allocate(local_difference)
           local_difference%pitch_ = me%pitch_ - rhs%pitch_
-          call difference%mark_as_defined
         class default
           error stop "fuel_element%subtract: unsupported rhs type" 
       end select
 
       difference = local_difference
+      call difference%mark_as_defined
 
       ! Alternative:
       ! select type(rhs)

@@ -10,9 +10,8 @@ contains
     call assert(all([me%user_defined(), reference%user_defined()]), &
                "(all([me%user_defined(), reference%user_defined()]) in oracle%within_tolerance")
 
-    allocate(error , source = me - reference)
-    !is_in_tolerance = (error%norm() <= tolerance)
-    print *,error%norm()
+    error = me - reference
+    is_in_tolerance = (error%norm() <= tolerance)
 
   end procedure
 
