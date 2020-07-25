@@ -1,4 +1,7 @@
 program hello
+  !! Demonstrate loop concurrency and Fortran philosophy:
+  !! communicate properties of code, not specific optimization
+  !! strategies. (Let the compiler do its job.) 
   use iso_fortran_env, only : output_unit
   implicit none
   integer, parameter :: max_greeting_len = 1024

@@ -37,8 +37,8 @@ contains
       end select
       
       ! The alternative is more general:
-      ! if (edit_descriptor == "LISTDIRECTED")
-      ! else if (edit_descriptor == "FORMATTED")
+      ! if (edit_descriptor == "LISTDIRECTED") then
+      ! else if (edit_descriptor == "FORMATTED") then
       !   !...
       ! else
       !   error stop "fuel_element%write_formatted: unrecognized edit_descriptor"

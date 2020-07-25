@@ -8,4 +8,6 @@ program main
 
   print *, fuel_rod
 
+  print *,"Test passed."
+
 end program main

@@ -29,19 +29,17 @@ program main
 
   end associate
 
-  ! interface
+contains
 
-  !   subroutine co_all( a ) 
-  !     logical, intent(inout) :: a
-  !   end subroutine
+  pure function both(lhs, rhs) result(lhs_and_rhs)
+    logical, intent(in) :: lhs, rhs
+    logical lhs_and_rhs 
+    lhs_and_rhs = lhs .and. rhs 
+  end function
 
-  !   subroutine co_reduce(a, operation)
-  !     logical, intent(inout) :: a
-  !     ! operation is the name of a pure function that takes two logical 
-  !     ! arguments and produces one result that is .true. if and only if
-        ! both arguments are true.
-  !   end subroutine
-
-  ! interface
+  subroutine co_all(a) 
+    logical, intent(inout) :: a
+    call co_reduce(a, both)
+  end subroutine
 
 end program

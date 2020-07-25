@@ -7,7 +7,7 @@ contains
   module procedure assert
 
     if (assertions) then
-      !! eliminate the executable code if assertions are turned off
+      ! eliminate the executable code if assertions are turned off
       if (.not. assertion) error stop description
     end if
 

@@ -1,5 +1,6 @@
       subroutine assert(assertion, description)
-C       internal subroutine to error terminate if assertion is false
+C       external subroutine lacking compile-time checking of
+C       argument type, type parameter, and rank.
         logical assertion
         character(len=*) description
         print *, transfer(assertion, description)
