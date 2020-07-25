@@ -16,7 +16,6 @@ foreach(main_program_file_base_name
 )
   string(REGEX REPLACE "^[0-9]*-" "" base_without_prefix "${main_program_file_base_name}")
   set(target_name "${base_without_prefix}")
-  message(STATUS "target_name: ${target_name}")
   add_executable("${target_name}"  "${main_program_file_base_name}.f90")
   target_link_libraries(${target_name} PRIVATE utilities)
 endforeach()
