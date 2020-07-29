@@ -14,7 +14,7 @@ Downloading, Building, and Testing
 export FC=caf         # Forces `cmake` to use the OpenCoarrays `caf` compiler wrapper
 git clone git@github.com:sourceryinstitute/pnnl-nrc-course
 mkdir -p pnnl-nrc-course/build
-cd build
+cd pnnl-nrc-course/build
 cmake ..
 make
 ctest
